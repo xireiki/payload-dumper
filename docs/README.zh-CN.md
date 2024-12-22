@@ -12,8 +12,8 @@
 ## 用法
 
 ```bash
-pip install git+https://github.com/5ec1cff/payload-dumper
-payload_dumper --partitions <需要dump的分区> <文件路径或 url>
+pip install git+https://github.com/xireiki/payload-dumper
+payload_dumper -p <需要dump的分区> <文件路径或 url>
 ```
 ---
 
@@ -40,7 +40,7 @@ payload_dumper payload.bin
 
 使用逗号分隔的要转储的分区列表：
 ```bash
-payload_dumper --partitions boot,dtbo,vendor payload.bin
+payload_dumper -p boot,dtbo,vendor payload.bin
 ```
 
 
@@ -48,5 +48,5 @@ payload_dumper --partitions boot,dtbo,vendor payload.bin
 
 假设旧分区位于名为 `old/` 的目录中：
 ```bash
-payload_dumper --diff payload.bin
+payload_dumper -d payload.bin
 ```

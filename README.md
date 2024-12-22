@@ -14,8 +14,8 @@ Future Outlook: Maybe it can support extracting some files in system partitions?
 ## usage
 
 ```bash
-pip install git+https://github.com/5ec1cff/payload-dumper
-payload_dumper --partitions <partitions you need> <file path or url>
+pip install git+https://github.com/xireiki/payload-dumper
+payload_dumper -p <partitions you need> <file path or url>
 ```
 ---
 
@@ -42,20 +42,20 @@ payload_dumper payload.bin
 
 Use a comma-separated list of partitions to dump:
 ```bash
-payload_dumper --partitions boot,dtbo,vendor payload.bin
+payload_dumper -p boot,dtbo,vendor payload.bin
 ```
 
 ### Patching older image with OTA
 
 Assuming the old partitions are in a directory named `old/`:
 ```bash
-payload_dumper --diff payload.bin
+payload_dumper -d payload.bin
 ```
 
 ## Developing
 
 ```shell
-git clone https://github.com/5ec1cff/payload-dumper
+git clone https://github.com/xireiki/payload-dumper
 # run
 cd src
 python -m payload_dumper

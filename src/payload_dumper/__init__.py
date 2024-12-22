@@ -10,35 +10,41 @@ def main():
     parser = argparse.ArgumentParser(description="OTA payload dumper")
     parser.add_argument("payloadfile", help="payload file name")
     parser.add_argument(
-        "--out", default="output", help="output directory (default: 'output')"
+        "-o", "--out", default=".", help="output directory (default: '.')"
     )
     parser.add_argument(
+        "-d",
         "--diff",
         action="store_true",
         help="extract differential OTA",
     )
     parser.add_argument(
+        "-O",
         "--old",
         default="old",
         help="directory with original images for differential OTA (default: 'old')",
     )
     parser.add_argument(
+        "-p",
         "--partitions",
         default="",
         help="comma separated list of partitions to extract (default: extract all)",
     )
     parser.add_argument(
+        "-w",
         "--workers",
         default=cpu_count(),
         type=int,
         help="number of workers (default: CPU count - %d)" % cpu_count(),
     )
     parser.add_argument(
+        "-l",
         "--list",
         action="store_true",
         help="list partitions in the payload file",
     )
     parser.add_argument(
+        "-m",
         "--metadata",
         action="store_true",
         help="extract and display metadata file from the payload",
